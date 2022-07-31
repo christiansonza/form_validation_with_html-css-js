@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+.container{
+    margin: 50px auto;
+    padding: 20px;
+    width: 260px;
+    height:120px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    z-index: -1;
+}
+#email,#password{
+    outline: none;
+    width: 250px;
+    height: 26px;
+
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-bottom: 10px;
+}
+button{
+    width: 258px;
+    height: 26px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+#submit:hover{
+    background-color: black;
+    color: white;
+}
+#second,#fourth{
+    margin-top: -8px;
+    text-align: center;
+    height: 12px;
+    width: 246px;
+    padding: 1.8px 4px;
+    font-family:sans-serif ;
+    font-size: 12px;
+    color: red;
+    border:1px solid  red;
+    background-color: rgb(250, 232, 232);
+    display: none;
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+<div class="icon">
+<input type="email" name="" id="email" placeholder="email">
+<p id="second">Please use a valid email.</p>
+
+
+</div>
+<div class="icon">
+<input type="password" name="" id="password" placeholder="password">
+<p id="fourth">Password must be longer than 7 characters.</p>
+
+
+</div>
+    <button id="submit">Submit</button>
+</div>
+
+<script>
+    var email=document.getElementById('email');
+    var password=document.getElementById('password');
+    var button=document.getElementById('submit');
+    var second=document.getElementById('second');
+    var fourth=document.getElementById('fourth');
+
+email.addEventListener("keyup",function(){
+    if(email.value.length>=11){
+            email.style.border="1px solid green";
+            second.style.display="none";
+        }
+})
+password.addEventListener("keyup",function(){
+    if(password.value.length>=8){
+        password.style.border="1px solid green";
+        fourth.style.display="none";
+        }
+})
+submit.addEventListener("click",function(){
+        if(email.value==null || email.value.length<=10){
+            email.style.border="1px solid red";
+            second.style.display="block";
+        }
+        if(password.value==null || password.value.length<=7){
+            password.style.border="1px solid red";
+            fourth.style.display="block";
+        }
+        else{
+            fourth.style.display="none"
+            second.style.display="none";
+        }
+})
+</script>
+</body>
+</html>
