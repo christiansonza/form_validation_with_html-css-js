@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+.container{
+    margin: 50px auto;
+    padding: 20px;
+    width: 260px;
+    height:120px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    z-index: -1;
+}
+img{
+    width: 60px;
+    height: 60px;
+    margin: 0 50%  auto;
+    transform: translate(-50%);
+    border: 1px solid black;
+    border-radius: 50%;
+}
+#email,#password{
+    outline: none;
+    width: 250px;
+    height: 26px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    
+}
+#submit{
+    background-color: black;
+    color: white;
+    width: 258px;
+    height: 26px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+#submit:hover{
+    background-color: rgb(84, 83, 83);
+}
+#second,#fourth{
+    margin-top: 1px;
+    text-align: center;
+    height: 12px;
+    width: 246px;
+    padding: 1.8px 4px;
+    font-family:sans-serif ;
+    font-size: 12px;
+    color: red;
+    border:1px solid  red;
+    background-color: rgb(250, 232, 232);
+    display: none;
+}
+#notif{
+    position: absolute;
+    left: 26%;
+    top: 60px;
+    margin:auto;
+    border-radius: 10px;
+    z-index: 1;
+    background-color: white;
+    width:300px;
+    height: auto 70px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.success{
+    text-align:center;
+    margin-top: 18px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+#ok{font-family: sans-serif;
+    border: none;
+    width: 64px;
+    height: 28px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    font-size: 16px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+#ok:hover{
+    background-color: black;
+    color: white;
+}
+#notif{
+  display: none;  
+}
+#icon{
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+    color: rgb(11, 193, 11);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+  <img src="https://icon-library.com/images/customer-login-icon/customer-login-icon-28.jpg" alt="">      
+<div class="icon">
+<input type="email" name="" id="email" placeholder="email">
+<p id="second">Please use a valid email.</p>
+
+
+</div>
+<div class="icon">
+<input type="password" name="" id="password" placeholder="password">
+<p id="fourth">Password must be longer than 7 characters.</p>
+
+
+</div>
+    <button id="submit">Submit</button>
+</div>
+<div id="notif">
+    <span id="icon">&#10003;</span>
+    <p class="success">Successfully submitted!</p> 
+    <button id="ok">okay</button>
+</div>
+<script>
+    var email = document.getElementById('email');
+    var password = document.getElementById('password');
+    var button = document.getElementById('submit');
+    var second = document.getElementById('second');
+    var fourth = document.getElementById('fourth');
+    var notif = document.getElementById('notif');
+    var ok = document.getElementById('ok');
+
+email.addEventListener("keyup",function(){
+    if(email.value.length>=12){
+            email.style.border="1px solid green";
+            second.style.display="none";
+        }
+})
+password.addEventListener("keyup",function(){
+    if(password.value.length>=8){
+        password.style.border="1px solid green";
+        fourth.style.display="none";
+        }
+})
+submit.addEventListener("click",function(){
+        if(email.value==null || email.value.length<=11){
+            email.style.border="1px solid red";
+            second.style.display="block";
+        }
+        if(password.value==null || password.value.length<=7){
+            password.style.border="1px solid red";
+            fourth.style.display="block";
+        }
+        else{
+            fourth.style.display="none"
+            second.style.display="none";
+        }
+})
+submit.addEventListener("click",function(){
+     if(email.value.length>=11 && password.value.length>=8){
+            notif.style.display="block";
+            submit.style.backgroundColor="#ccc";
+            submit.style.color="black";
+        }
+})
+ok.addEventListener("click",function(){
+    notif.style.display="none";
+})
+
+
+</script>
+</body>
+</html>
