@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <style>
+
 .container{
     margin: 50px auto;
     padding: 20px;
@@ -67,6 +68,7 @@ img{
     height: auto 70px;
     text-align: center;
     border: 1px solid #ccc;
+   
 }
 .success{
     text-align:center;
@@ -135,41 +137,37 @@ img{
     var notif = document.getElementById('notif');
     var ok = document.getElementById('ok');
 
-email.addEventListener("keyup",function(){
-    if(email.value.length>=12){
-            email.style.border="1px solid green";
-            second.style.display="none";
-        }
-})
-password.addEventListener("keyup",function(){
-    if(password.value.length>=8){
-        password.style.border="1px solid green";
-        fourth.style.display="none";
-        }
-})
-submit.addEventListener("click",function(){
-        if(email.value==null || email.value.length<=11){
+button.addEventListener("click",function(){
+        if(email.value==null || email.value.length <=11){
             email.style.border="1px solid red";
             second.style.display="block";
         }
         if(password.value==null || password.value.length<=7){
-            password.style.border="1px solid red";
-            fourth.style.display="block";
+        password.style.border="1px solid red"
+        fourth.style.display="block";
         }
-        else{
-            fourth.style.display="none"
-            second.style.display="none";
-        }
+    })
+
+
+email.addEventListener("keyup",function(){
+    if(email.value.length>=12){
+        email.style.border="1px solid #3CCF4E";
+        second.style.display="none";
+    }
+})
+password.addEventListener("keyup",function(){
+    if(password.value.length>=8){
+        password.style.border="1px solid #3CCF4E";
+        fourth.style.display="none";
+    }
 })
 submit.addEventListener("click",function(){
-     if(email.value.length>=11 && password.value.length>=8){
-            notif.style.display="block";
-            submit.style.backgroundColor="#ccc";
-            submit.style.color="black";
-        }
-})
+if(email.value.length>=12 && password.value.length>=8){
+notif.style.display="block";
+}
 ok.addEventListener("click",function(){
     notif.style.display="none";
+})
 })
 
 
