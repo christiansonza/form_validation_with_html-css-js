@@ -1,175 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
 
-.container{
-    margin: 50px auto;
-    padding: 20px;
-    width: 260px;
-    height:120px auto;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    z-index: -1;
-}
-img{
-    width: 60px;
-    height: 60px;
-    margin: 0 50%  auto;
-    transform: translate(-50%);
-    border: 1px solid black;
-    border-radius: 50%;
-}
-#email,#password{
-    outline: none;
-    width: 250px;
-    height: 26px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    text-align: center;
-    
-}
-#submit{
-    background-color: black;
-    color: white;
-    width: 258px;
-    height: 26px;
-    margin-top: 10px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: 0.4s;
-}
-#submit:hover{
-    background-color: rgb(84, 83, 83);
-}
-#second,#fourth{
-    margin-top: 1px;
-    text-align: center;
-    height: 12px;
-    width: 246px;
-    padding: 1.8px 4px;
-    font-family:sans-serif ;
-    font-size: 12px;
-    color: red;
-    border:1px solid  red;
-    background-color: rgb(250, 232, 232);
-    display: none;
-}
-#notif{
-    position: absolute;
-    left: 26%;
-    top: 60px;
-    margin:auto;
-    border-radius: 10px;
-    z-index: 1;
-    background-color: white;
-    width:300px;
-    height: auto 70px;
-    text-align: center;
-    border: 1px solid #ccc;
-   
-}
-.success{
-    text-align:center;
-    margin-top: 18px;
-    font-family: sans-serif;
-    letter-spacing: 1px;
-    font-size: 18px;
-}
-#ok{font-family: sans-serif;
-    border: none;
-    width: 64px;
-    height: 28px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    letter-spacing: 1px;
-    font-size: 16px;
-    transition: 0.4s;
-    cursor: pointer;
-}
-#ok:hover{
-    background-color: black;
-    color: white;
-}
-#notif{
-  display: none;  
-}
-#icon{
-    border-radius: 50%;
-    font-size: 40px;
-    font-weight: bold;
-    position: relative;
-    top: 10px;
-    color: rgb(11, 193, 11);
-}
+        form{
+        padding: 20px;
+        width: 260px;
+        height:360px auto;
+        border-radius: 8px;
+        margin:50px auto ;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          }
+        img{
+            width: 100px;
+            height: 100px;
+            margin: 10px 30% auto;
+            border-radius: 50%;
+        }
+        input{
+            text-align: center;
+            border: 1px solid #ccc;
+            height: 26px;
+            width: 230px;
+            margin: 10px 0 0 10px;
+            outline: none;
+        }
+        #submit{
+            width: 240px;
+            margin: 16px 0 0 10px;
+            color: white;
+            background-color: black;
+            height: 26px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        #submit:hover{
+            background: rgb(89, 87, 87);
+        }
+        #msg1,#msg2,#msg3,#msg4{
+        border: 1px solid red;
+        color: red;
+        font-size: 12px;
+        text-align: center;
+        width: 234px;
+        margin: 1px 0 0 10px;
+        display:none;
+        }
+        #container{
+            border: 1px solid #ccc;
+            background-color: #F9F9F9;
+            width: 200px;
+            height: 100px auto;
+            text-align: center;
+            border-radius: 10px;
+            position: absolute;
+            top: 20%;
+            left: 30%;
+            display: none;
+        }
+        #icon{
+            color: rgb(26, 218, 116);
+            font-size: 32px;
+            position: relative;
+            top: 6px;
+            font-weight: bold;
+        }
+        .success{
+            margin: 16px auto;
+        }
+        #okay{
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 60px;
+            height: 26px;
+            border: none;
+            background-color: #ccc;
+            transition: 0.5s;
+        }
+        #okay:hover{
+            background-color: black;
+            color: white;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        
-  <img src="https://icon-library.com/images/customer-login-icon/customer-login-icon-28.jpg" alt="">      
-<div class="icon">
-<input type="email" name="" id="email" placeholder="email">
-<p id="second">Please use a valid email.</p>
+    <div id="container">
+        <span id="icon">&#10003;</span><br>
+        <div class="success">Successfully submitted.</div>
+        <button id="okay">okay</button>
+    </div>
+    <form action="">
+        <img src="https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620?k=20&m=1300845620&s=612x612&w=0&h=f4XTZDAv7NPuZbG0habSpU0sNgECM0X7nbKzTUta3n8=" alt="">
+    <input type="text" name="fname" id="fname" placeholder="fname"><br>
+    <p id="msg1">This field can't be empty.</p>
+    <input type="text" name="lname" id="lname" placeholder="lname"><br>
+    <p id="msg2">This field can't be empty.</p>
+    <input type="email" name="email" id="email" placeholder="email"><br>
+    <p id="msg3">Please use a valid email.</p>
+    <input type="password" name="password" id="password" placeholder="password"><br>
+    <p id="msg4">Password must be longer than 7 characters.</p>
+    <input type="button" name="submit" id="submit" value="submit">
+</form>
 
-
-</div>
-<div class="icon">
-<input type="password" name="" id="password" placeholder="password">
-<p id="fourth">Password must be longer than 7 characters.</p>
-
-
-</div>
-    <button id="submit">Submit</button>
-</div>
-<div id="notif">
-    <span id="icon">&#10003;</span>
-    <p class="success">Successfully submitted!</p> 
-    <button id="ok">okay</button>
-</div>
 <script>
-    var email = document.getElementById('email');
-    var password = document.getElementById('password');
-    var button = document.getElementById('submit');
-    var second = document.getElementById('second');
-    var fourth = document.getElementById('fourth');
-    var notif = document.getElementById('notif');
-    var ok = document.getElementById('ok');
+    var msg1 = document.getElementById("msg1");
+    var msg2 = document.getElementById("msg2");
+    var msg3 = document.getElementById("msg3");
+    var msg4 = document.getElementById("msg4");
 
-button.addEventListener("click",function(){
-        if(email.value==null || email.value.length <=11){
+    var fname = document.getElementById("fname");
+    var lname = document.getElementById("lname");
+    var email = document.getElementById("email");
+    var password = document.getElementById("password");
+    
+    var submit = document.getElementById("submit");
+    var notif = document.getElementById("container");
+    var ok = document.getElementById("okay");
+
+
+    submit.addEventListener("click",function(){
+        if(fname.value.length<1){
+        msg1.style.display="block";
+        fname.style.border="1px solid red";
+       }
+       if(lname.value.length<1){
+        msg2.style.display="block";
+        lname.style.border="1px solid red";
+       }
+       if(email.value.length<=10){
+        msg3.style.display="block";
+        email.style.border="1px solid red";
+       }
+       if(password.value.length<=7){
+        msg4.style.display="block";
+        password.style.border="1px solid red";
+       }
+    })
+    fname.addEventListener("keyup",function(){
+        if(fname.value.length>=1){
+            fname.style.border="1px solid green";
+        msg1.style.display="none";
+       }if(fname.value.length<1){
+            fname.style.border="1px solid red";
+        msg1.style.display="block";
+       }
+    })
+    lname.addEventListener("keyup",function(){
+        if(lname.value.length>=1){
+            lname.style.border="1px solid green";
+        msg2.style.display="none";
+       }if(lname.value.length<1){
+            lname.style.border="1px solid red";
+        msg2.style.display="block";
+       }
+    })
+    email.addEventListener("keyup",function(){
+        if(email.value.length>=10){
+            email.style.border="1px solid green";
+        msg3.style.display="none";
+       }if(email.value.length<1){
             email.style.border="1px solid red";
-            second.style.display="block";
-        }
-        if(password.value==null || password.value.length<=7){
-        password.style.border="1px solid red"
-        fourth.style.display="block";
-        }
+        msg3.style.display="block";
+       }
+    })
+    password.addEventListener("keyup",function(){
+        if(password.value.length>=8){
+            password.style.border="1px solid green";
+        msg4.style.display="none";
+       }if(password.value.length<1){
+            password.style.border="1px solid red";
+        msg4.style.display="block";
+       }
     })
 
-
-email.addEventListener("keyup",function(){
-    if(email.value.length>=12){
-        email.style.border="1px solid #3CCF4E";
-        second.style.display="none";
+   submit.addEventListener("click",function(){
+    if(fname.value.length>=1 && lname.value.length>=2 && email.value.length>=10 && password.value.length>=7){
+        notif.style.display="block";
     }
-})
-password.addEventListener("keyup",function(){
-    if(password.value.length>=8){
-        password.style.border="1px solid #3CCF4E";
-        fourth.style.display="none";
-    }
-})
-submit.addEventListener("click",function(){
-if(email.value.length>=12 && password.value.length>=8){
-notif.style.display="block";
-}
-ok.addEventListener("click",function(){
+   })
+   ok.addEventListener("click",function(){
     notif.style.display="none";
-})
-})
-
+   })
 
 </script>
 </body>
